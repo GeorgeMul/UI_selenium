@@ -67,9 +67,9 @@ time.sleep(2)
 # 複製卡片到hello列表
 driver.find_element(By.CSS_SELECTOR, ".x7x105F0Ex0A7R.bxgKMAm3lq5BpA").click()
 driver.implicitly_wait(10)
-driver.find_element(By.XPATH, "//*[@id='chrome-container']/div[4]/div/div[2]/div/div/div/ul[2]/li[1]/a").click()
+driver.find_element(By.CSS_SELECTOR, 'button[data-testid="list-actions-move-all-cards-button"].gJDsPins_eYkBM').click()
 time.sleep(2)
-driver.find_element(By.XPATH, "//*[@id='chrome-container']/div[4]/div/div[2]/div/div/div/form/ul/li[4]/a").click()
+driver.find_element(By.XPATH, "//li[4]/button/span/span").click()
 time.sleep(2)
 
 # 更改名稱part1,對名稱點擊左鍵
@@ -103,12 +103,13 @@ deleteCard.click()
 
 # 刪除列表
 driver.find_element(By.XPATH, '//*[@id="board"]/li[3]/div/div[1]/button').click()
-driver.find_element(By.XPATH, '//*[@id="chrome-container"]/div[4]/div/div[2]/div/div/div/ul[3]/li/a').click()
+driver.find_element(By.CSS_SELECTOR, 'button[data-testid="list-actions-archive-list-button"].gJDsPins_eYkBM').click()
 
 # 刪除看板
 driver.find_element(By.XPATH, '//*[@id="content"]/div/div/div[1]/div[1]/div/span[2]/button[2]').click()
 driver.find_element(By.XPATH, '//*[@id="content"]/div/div/div[2]/div/div/div/div[2]/div/ul/li[17]/a').click()
 driver.find_element(By.XPATH, '//*[@id="chrome-container"]/div[4]/div/div[2]/div/div/div/input').click()
+
 # 關閉瀏覽器
 time.sleep(3)
 driver.quit()
